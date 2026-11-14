@@ -59,14 +59,17 @@ $env:TZ='Asia/Kolkata'; npm test
 ## Folder layout
 
 ```
-App.tsx              App root
-index.ts             Entry point (registers App)
 assets/              Icons and splash images
 src/
-  screens/           One file per screen (HomeScreen.tsx)
+  app/               Screens (Expo Router: every file here is a screen)
+    _layout.tsx      App root: opens the database, sets up navigation
+    index.tsx        Home: list of subscriptions
+    edit.tsx         Add / edit a subscription
   components/        Reusable UI pieces
-  logic/             Plain TypeScript business logic (dates, totals, reminder rules) — no React/Expo imports, unit-testable
-  storage/           On-device storage (SQLite) — not set up yet
+  logic/             Plain TypeScript business logic (dates, reminder rules, list, form checks) — no React/Expo imports, unit-tested
+  storage/           On-device SQLite database
   notifications/     Local reminder notifications — not set up yet
   types/             Shared TypeScript types
 ```
+
+The app's entry point is `expo-router/entry` (set in `package.json`).
