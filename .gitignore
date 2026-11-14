@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# personal notes (kept locally, not on GitHub)
+ENGINEERING_LOG.md
